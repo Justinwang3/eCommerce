@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+		<title>OBSESSED</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
+    <script>
+      function c_subtotal(){
+        var q1 = document.getElementById("quantity1");
+        var q2 = document.getElementById("quantity2");
+        var q3 = document.getElementById("quantity3");
+        var total = document.getElementById("total");
+        var subtotal = (parseFloat(q1.value)*15.00)+(parseFloat(q2.value)*15.00)+(parseFloat(q3.value)*15.00);
+        total.innerHTML = "$"+(subtotal * 1.0875)+"Total";
+      }
+    </script>
+	</head>
+	<body>
+      <header>
+        <a href="index.html" id="logo">
+          <h1>OBSESSED</h1>
+        </a>
+        <nav>
+          <ul>
+             <li><a href="index.html" id="selected">Home</a></li>
+             <li><a href="products.html">Products</a></li>
+          </ul>
+        </nav>
+        <br>
+      </header>
+        <div>
+          <h2 id="p1_head">OBSESSED - Shadow Shirt</h2>
+          <br>
+          <img src = "img/Product-1.png" alt="" id="pic_p1">
+          <br>
+          <div id="descrip">
+            <span>$15.00</span>
+            <p>A basic design easy to match any person's unique style. <br>This shirt has a great comfort and also comes in various different colors. <br>It is the perfect shirt to wear to bring an outfit together. 
+            <p>-5.6 oz. All colors are a pre-shrunk poly/cotton blend</p> 
+            <p>-Double-needle stitching for durability</p>
+            <p>-Stretchy ribbed crewneck collar</p> 
+            <p>-Blended fabric shrinks less than 100% cotton</p>
+            <input id = "quantity1" type = "text" placeholder = "Enter Quantity">
+          </div>
+        </div>
+        <button onclick="c_subtotal()">Add to Cart</button>
+        <div id="total"></div>
+	</body>
+</html>
