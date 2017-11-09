@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+		<title>OBSESSED</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
+    <script>
+      function csubtotal(){
+        var q1 = document.getElementById("quantity1");
+        var q2 = document.getElementById("quantity2");
+        var q3 = document.getElementById("quantity3");
+        var total = document.getElementById("total");
+        var subtotal = document.getElementById("subtotal");
+        var tax = document.getElementById("tax");
+        var handling = document.getElementById("handling");
+        var line = document.getElementById("line");
+        var subtotal_c = (parseFloat(q1.value)*15.00)+(parseFloat(q2.value)*15.00)+(parseFloat(q3.value)*15.00);
+        var tax_c = subtotal_c*0.0875;
+        var shipping = 7.50
+        var amt_total = subtotal_c+tax_c+shipping;
+        subtotal.innerHTML = "Subtotal: $" + subtotal_c + "\n";
+        tax.innerHTML = "Tax: $" + tax_c + "\n";
+        handling.innerHTML = "Shipping and Handling: $" + shipping + "\n";
+        line.innerHTML = "----------------------------------\n";
+        total.innerHTML = "Total: $" + amt_total + "\n";
+      }
+    </script>
+	</head>
+	<body>
+      <header>
+        <a href="index.html" id="logo">
+          <h1>OBSESSED</h1>
+        </a>
+        <nav>
+          <ul>
+             <li><a href="index.html" id="selected">Home</a></li>
+             <li><a href="products.html">Products</a></li>
+             <li><a href="cart.html">Order</a></li>
+          </ul>
+        </nav>
+        <br>
+      </header>
+      <section>
+        <div id="p1">
+          <h2 id="p1_t">OBSESSED - Shadow Shirt</h2>
+          <br>
+            <img src = "img/Product-1.png" alt="" id="img1">
+          <br>
+            <span id="amt1">$15.00</span><br>
+            <input id = "quantity1" type = "text" placeholder = "Enter Quantity">
+        </div>
+          <br>
+          <br>
+          <br>
+        <div id="p2">
+          <h2 id="p2_t">OBSESSED - Font Shirt</h2>
+          <br>
+            <img src = "img/Product-2.png" alt="" id="img2">
+          <br>
+            <span id="amt2">$15.00</span><br>
+            <input id = "quantity2" type = "text" placeholder = "Enter Quantity">
+        </div>
+          <br>
+          <br>
+          <br>
+        <div id="p3">
+          <h2 id="p3_t">OBSESSED - Like Shirt</h2>
+          <br>
+            <img src = "img/Product-3.png" alt="" id="img3">
+          <br>
+            <span id="amt3">$15.00</span><br>
+            <input id = "quantity3" type = "text" placeholder = "Enter Quantity">
+        </div>
+          <br>
+          <br>
+          <br>
+          <button onclick="csubtotal()">Place Order</button>
+          <br>
+          <br>
+          <br>
+        <div id="payment">
+          <div id="subtotal"></div>
+          <br>
+          <div id="tax"></div>
+          <br>
+          <div id="handling"></div>
+          <br>
+          <div id="line"></div>
+          <br>
+          <div id="total"></div>
+        </div>
+      </section>
+	</body>
+</html>
