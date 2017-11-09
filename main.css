@@ -335,8 +335,89 @@ h3{
 
 
 
-/* About */
-#about{
-  text-align: center;
-  font-size: 3em;
+/* Cart */
+#img1{
+  padding-left: 10%;
+}
+
+#img2{
+  padding-left: 10%;
+  max-height: 300px;
+  max-width: 400px;
+}
+
+#img3{
+  padding-left: 10%;
+  max-height: 300px;
+  max-width: 400px;
+}
+
+#p1_t{
+  padding-left: 10%;
+}
+
+#p3_t{
+  padding-left: 10%;
+}
+
+#p2_t{
+  padding-left: 10%;
+}
+
+#amt1{
+  padding-left: 10%;
+}
+
+#amt2{
+  padding-left: 10%;
+}
+
+#amt3{
+  padding-left: 10%;
+}
+
+#quantity1{
+  margin-left: 10%;
+}
+
+#quantity2{
+  margin-left: 10%;
+}
+
+#quantity3{
+  margin-left: 10%;
+}
+
+button{
+  padding-bottom: 1%;
+  padding-left: 1.25%;
+  padding-right: 1.25%;
+  padding-top: 1%;
+  font-family: monospace;
+  font-size: 1.75em;
+  margin-left: 10%;
+}
+
+input{
+  font-family: monospace;
+  font-size: 1em;
+  padding-bottom: 0.5%;
+  padding-left: 0.75%;
+  padding-right: 0.75%;
+  padding-top: 0.5%;
+}
+
+#payment{
+  font-family: monospace;
+  font-size: 2em;
+  margin-left: 10%;
+}
+
+@media screen and (min-width: 1500px){
+  #payment{
+    font-family: monospace;
+    font-size: 2em;
+    margin-left: 50%;
+    margin-top: -1400px;
+  }
 }
