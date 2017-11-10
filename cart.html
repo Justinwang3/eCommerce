@@ -3,7 +3,7 @@
 	<head>
     <meta charset="utf-8">
 		<title>OBSESSED</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="CSS/main.css">
     <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
     <script>
       function csubtotal(){
@@ -15,14 +15,49 @@
         var tax = document.getElementById("tax");
         var handling = document.getElementById("handling");
         var line = document.getElementById("line");
-        var subtotal_c = (parseFloat(q1.value)*15.00)+(parseFloat(q2.value)*15.00)+(parseFloat(q3.value)*15.00);
-        var tax_c = subtotal_c*0.0875;
-        var shipping = 7.50
-        var amt_total = subtotal_c+tax_c+shipping;
+        var qty_1 = document.getElementById("qty_1");
+        var qty_2 = document.getElementById("qty_2");
+        var qty_3 = document.getElementById("qty_3");
+        var qty_l = document.getElementById("qty_l");
+        var p1 = document.getElementById("profit1");
+        var p2 = document.getElementById("profit2");
+        var p3 = document.getElementById("profit3");
+        var tp = document.getElementById("t_profit");
+        var line1 = document.getElementById("line1");
+        var line2 = document.getElementById("line2");
+        var line3 = document.getElementById("line3");
+          var qty1 = 10;
+          var qty2 = 10;
+          var qty3 = 10;
+        
+            var qt_1 = qty1 - parseFloat(q1.value)
+            var qt_2 = qty1 - parseFloat(q2.value)
+            var qt_3 = qty1 - parseFloat(q3.value)
+          
+            var p_1 = parseFloat(q1.value)*13.00;
+            var p_2 = parseFloat(q2.value)*13.00;
+            var p_3 = parseFloat(q3.value)*13.00;
+            var t_p = p_1 + p_2 + p_3
+        
+            var qty = (qty1 - parseFloat(q1.value)) + (qty2 - parseFloat(q2.value)) + (qty3 - parseFloat(q3.value))
+            var subtotal_c = (parseFloat(q1.value)*15.00)+(parseFloat(q2.value)*15.00)+(parseFloat(q3.value)*15.00);
+            var tax_c = subtotal_c*0.0875;
+            var shipping = 7.50;
+            var amt_total = subtotal_c + tax_c + shipping;
+        p1.innerHTML = "Shadow Profit: $" + p_1 + "\n";
+        p2.innerHTML = "Font Profit: $" + p_2 + "\n";
+        p3.innerHTML = "Like Profit: $" + p_3 + "\n";
+        tp.innerHTML = "Total Profit: $" + t_p + "\n";
+        qty_1.innerHTML = "Shadow Quantity Left: " + qt_1 + "\n";
+        qty_2.innerHTML = "Font Quantity Left: " + qt_2 + "\n";
+        qty_3.innerHTML = "Like Quantity Left: " + qt_3 + "\n";
+        qty_l.innerHTML = "Quantity Left: " + qty + "\n";
         subtotal.innerHTML = "Subtotal: $" + subtotal_c + "\n";
         tax.innerHTML = "Tax: $" + tax_c + "\n";
         handling.innerHTML = "Shipping and Handling: $" + shipping + "\n";
-        line.innerHTML = "----------------------------------\n";
+        line1.innerHTML = "----------------------------------\n";
+        line2.innerHTML = "----------------------------------\n";
+        line3.innerHTML = "----------------------------------\n";
         total.innerHTML = "Total: $" + amt_total + "\n";
       }
     </script>
@@ -80,13 +115,41 @@
           <br>
           <br>
         <div id="payment">
+          <div id="qty_1"></div>
+          <br>
+          <div id="qty_2"></div>
+          <br>
+          <div id="qty_3"></div>
+          <br>
+          <div id="line1"></div>
+          <br>
+          <div id="qty_l"></div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div id="profit1"></div>
+          <br>
+          <div id="profit2"></div>
+          <br>
+          <div id="profit3"></div>
+          <br>
+          <div id="line2"></div>
+          <br>
+          <div id="t_profit"></div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <div id="subtotal"></div>
           <br>
           <div id="tax"></div>
           <br>
           <div id="handling"></div>
           <br>
-          <div id="line"></div>
+          <div id="line3"></div>
           <br>
           <div id="total"></div>
         </div>
