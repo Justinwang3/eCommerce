@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+	<head>
+	<style>
+		#title{
+			text-decoration: none;
+		}
+		#hImg{
+			max-width: 500px;
+			max-hieght: 500px;
+		}
+		.lessons:hover{
+			text-decoration: none;
+		}
+		.lessonImg{
+			max-width: 350px;
+			max-height: 300px;
+		}
+		.quizes:hover{
+			text-decoration: none;
+		}
+		.sidenav {
+			height: 100%;
+			width: 160px;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #111;
+			overflow-x: hidden;
+			padding-top: 90px;
+			padding-left: 30px;
+		}
+		#quiz3{
+			margin-left: 200px
+		}
+		#submit{
+			font-size: 50px;
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+	</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+		<script type="text/template" id="qQuestion">
+				<div class='question'>
+					<h4 class="pt-4"> {{q}} </h4>
+					<p class="p-2"> {{c1}} </p>
+					<p class="p-2"> {{c2}} </p>
+					<p class="p-2"> {{c3}} </p>
+					<p class="p-2"> {{c4}} </p>
+					<input type="text" id="{{key}}" placeholder="Enter Choice" class="p-2">
+				</div>
+		</script>
+		<script>
+			var data;	
+				function loadJSON(){				
+					$.getJSON("https://chemistry-1b014.firebaseio.com/data.json",function(results){
+						data=results;
+						quiz();
+					})
+				}
+				function quiz(){
+					var build = "";
+					var qQuestion = document.getElementById("qQuestion").innerHTML;
+					var output = document.getElementById("3quiz");
+					for(var key in data.quiz3){
+						build += Mustache.render(qQuestion, data.quiz3[key]);
+					}
+					output.innerHTML = build;
+				}
+				function grade(){
+					var anskey = "";
+					var ans = "";
+					for(var key in data.quiz3){
+						anskey = data.quiz3[ans]
+						ans = document.getElementById(key).value;
+						if(anskey == ans){
+							
+						}
+						else{
+							
+						}
+					}
+				}
+					
+			
+		</script>
+	</head>
+	<body class="bg-primary" onload="loadJSON()">
+		<header class="bg-primary jumbotron">
+			<a href="Structure.html" id="title"><h1 align="center" class="display-1 text-white">Quiz 3</h1>
+			<h3 class="text-white" align="center">Organic Chemistry</h3>
+		</header>
+			<nav class="sidenav navbar-dark">
+			  <ul class="navbar-nav">
+				<li class="nav-item active">
+				  <a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+					Lessons
+				  </a>
+				  <div class="dropdown-menu">
+					<a class="dropdown-item" href="lesson1.html">Lesson 1</a>
+					<a class="dropdown-item" href="lesson2.html">Lesson 2</a>
+					<a class="dropdown-item" href="lesson3.html">Lesson 3</a>
+				  </div>
+				</li>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+					Quizes
+				  </a>
+				  <div class="dropdown-menu">
+					<a class="dropdown-item" href="quiz1.html">Quiz 1</a>
+					<a class="dropdown-item" href="quiz2.html">Quiz 2</a>
+					<a class="dropdown-item" href="quiz3.html">Quiz 3</a>
+				  </div>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="about.html">About</a>
+				</li>
+			  </ul>
+			 </nav>
+		<div class="row" id="quiz3">
+			<div class="col-sm-11 shadow p-3 mb-5 bg-white">
+				<div id="3quiz">
+				</div>
+				<button class="text-white bg-primary mt-5 p-2 pr-4 pl-4" onclick="grade()" id="submit">Submit</button>
+			</div>
+		</div>
+	</body>
+</html>
